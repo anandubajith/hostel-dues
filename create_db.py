@@ -18,7 +18,9 @@ year = ''
 
 
 def get_regex(course):
-    """ Returns the corresponding regex for each PDF file"""
+    """
+    Returns the corresponding roll no. regex for each PDF file
+    """
     if course == 'BTECH.pdf':
         return re.compile(r'B\d+\w{2}\s.+\s-?\d+')
     elif course == 'PhD.pdf':
@@ -91,6 +93,9 @@ def parsePDFs():
 
 
 def updateConfig():
+    """
+    Updates config.ini with the recent values
+    """
     config = ConfigParser.ConfigParser()
     now = datetime.datetime.now()
     config.add_section('Last_Update')

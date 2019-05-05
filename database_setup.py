@@ -8,6 +8,12 @@ Base = declarative_base()
 
 
 class DuesRecord(Base):
+    """
+    Sets up the database schema
+
+    | roll_no | name | due | 
+       
+    """
     __tablename__ = 'dues_record'
 
     roll_no = Column(

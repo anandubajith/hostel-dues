@@ -3,6 +3,7 @@ from sqlalchemy.orm import sessionmaker
 
 from database_setup import Base, DuesRecord
 
+# sets up local database path
 engine = create_engine(
     'sqlite:///dues_record.db',
     connect_args={

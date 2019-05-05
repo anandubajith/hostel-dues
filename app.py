@@ -15,6 +15,12 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def homepage():
+    """
+    Handle homepage requests
+    Renders homepage.html on GET request
+    Renders homepage.html with if valid data exists, otherwise throw error
+    
+    """
     name = ''
     due = ''
     result = ''
@@ -53,6 +59,10 @@ def homepage():
 
 @app.route('/<roll_no>')
 def homepageJSON(roll_no):
+    """
+    Handle API requests
+    Throw error if invalid format
+    """
     roll_no = roll_no.encode('ascii').upper()
     try:
         record = session.query(DuesRecord).filter_by(roll_no=roll_no).one()
@@ -67,6 +77,10 @@ def homepageJSON(roll_no):
 
 @app.route('/update', methods=['GET', 'POST'])
 def updateDatabase():
+    """
+    Handle the update page
+    Performs database update if passwords match
+    """
     if request.method == 'GET':
         DATE = fetchLastUpdateDetails()
         PAYMENT_DATE = fetchLastPaymentUpdateDetails()
@@ -84,6 +98,7 @@ def updateDatabase():
 
 
 def fetchLastUpdateDetails():
+    """ Helper function to get the date of last update """
     config = ConfigParser.ConfigParser()
     config.read('config.ini')
     day = config.get('Last_Update', 'date')
@@ -93,6 +108,7 @@ def fetchLastUpdateDetails():
 
 
 def fetchLastPaymentUpdateDetails():
+    """ Helper function to get the date of last payment update """
     config = ConfigParser.ConfigParser()
     config.read('config.ini')
     day = config.get('Last_Payment_Update', 'date')
