@@ -3,7 +3,7 @@
 ![Screenshot](/static/screenshot.png)
 
 ## Build Instructions
-- install python, pip (https://www.tecmint.com/install-pip-in-linux/)
-- pip install -r requirements.txt
-- python app.py 't' 
-
+- Install python, pip (https://www.tecmint.com/install-pip-in-linux/)
+- Clone the repository
+- Install requirements `pip install -r requirements.txt`
+- Start the app in debug mode `python app.py 't'`
