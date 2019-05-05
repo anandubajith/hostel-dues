@@ -6,22 +6,23 @@ from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
+
 class DuesRecord(Base):
     __tablename__ = 'dues_record'
 
     roll_no = Column(
         String(10),
-        primary_key = True
+        primary_key=True
     )
     name = Column(
         String(80),
-        nullable = True
+        nullable=True
     )
     due = Column(
         Integer,
-        nullable = True
+        nullable=True
     )
-    
+
     @property
     def serialize(self):
         return {
@@ -29,9 +30,7 @@ class DuesRecord(Base):
             'name': self.name,
             'due': self.due,
         }
-    
 
-###################end#of#file###################
 
 engine = create_engine('sqlite:///dues_record.db')
 Base.metadata.create_all(engine)
