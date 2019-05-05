@@ -5,6 +5,7 @@ html, body, div, form {
 
 h1, h2, h3, h4, h5, h6 { 
     font-weight:normal;
+    margin:6px 0;
 }
 
 img {
@@ -42,7 +43,7 @@ nav img {
 main {
     box-sizing: border-box;
     width: 100%;
-    max-width: 400px;
+    max-width: 400px;	
     margin: auto;
     padding: 1em;
 }
@@ -85,6 +86,6 @@ form input {
     background-color: rgba(0,0,0,0.7);
 }
 
-footer{
+footer {
     align-self: baseline;
 }
